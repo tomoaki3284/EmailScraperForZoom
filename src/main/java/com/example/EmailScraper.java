@@ -41,7 +41,9 @@ public class EmailScraper {
 			}
 			else{
 				meetingId = extractMeetingId(meetingIdDiv);
-				password = passwordDiv.getTextContent();
+				String rawPassword = passwordDiv.getTextContent();
+				String[] texts = rawPassword.split(" ");
+				password = texts[texts.length-1];
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
